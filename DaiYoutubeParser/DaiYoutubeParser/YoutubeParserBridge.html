@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    
+    <!-- 頭 -->
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=Big5">
+        <style>body{margin:0px 0px 0px 0px;}</style>
+    </head>
+    
+    <!-- 身體 -->
+    <body style="">
+        <div id="player"></div>
+        
+        <!-- script 本體 -->
+        <script>
+            var tag = document.createElement('script');
+            tag.src = "http://www.youtube.com/player_api";
+            var firstScriptTag = document.getElementsByTagName('script')[0];
+            firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+            var player;
+            var errorCode;
+            
+            function onYouTubePlayerAPIReady() {
+                errorCode = 0;
+                player = new YT.Player('player', { width:%.2f, height:%.2f, videoId:'%@', playerVars: { 'autoplay': 1, 'controls': 0 }, events: { 'onReady': onPlayerReady, 'onStateChange': onPlayerStateChange, 'onError': onPlayerError } });
+            }
+        
+            function onPlayerReady(event) {
+                event.target.playVideo();
+                player.playVideo();
+            }
+        
+            function onPlayerStateChange(event) {
+                if (event.data == YT.PlayerState.PLAYING) {
+                    event.target.setPlaybackQuality('%@');
+                }
+            }
+        
+            function onPlayerError(event) {
+                errorCode = event.data;
+            }
+        
+            function error() {
+                return errorCode;
+            }
+        </script>
+    </body>
+</html>

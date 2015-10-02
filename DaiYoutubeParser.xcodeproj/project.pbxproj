@@ -1,0 +1,334 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1C592D011BBE9E6D0081FA1C /* YoutubeParserBridge.html in Resources */ = {isa = PBXBuildFile; fileRef = 1C592D001BBE9E6D0081FA1C /* YoutubeParserBridge.html */; settings = {ASSET_TAGS = (); }; };
+		1C5B13061BBE942F00D43036 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C5B13051BBE942F00D43036 /* main.m */; };
+		1C5B13091BBE942F00D43036 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C5B13081BBE942F00D43036 /* AppDelegate.m */; };
+		1C5B13111BBE942F00D43036 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1C5B13101BBE942F00D43036 /* Assets.xcassets */; };
+		1C5B13141BBE942F00D43036 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1C5B13121BBE942F00D43036 /* LaunchScreen.storyboard */; };
+		1C5B131E1BBE94D500D43036 /* DaiYoutubeParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C5B131D1BBE94D500D43036 /* DaiYoutubeParser.m */; settings = {ASSET_TAGS = (); }; };
+		1C5B13211BBE960700D43036 /* DaiYoutubeParserOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C5B13201BBE960700D43036 /* DaiYoutubeParserOperation.m */; settings = {ASSET_TAGS = (); }; };
+		1C5B13241BBE970200D43036 /* DaiYoutubeParserWebView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C5B13231BBE970200D43036 /* DaiYoutubeParserWebView.m */; settings = {ASSET_TAGS = (); }; };
+		1CB0D0771BC25FD200F144BA /* DemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CB0D0751BC25FD200F144BA /* DemoViewController.m */; settings = {ASSET_TAGS = (); }; };
+		1CB0D0781BC25FD200F144BA /* DemoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1CB0D0761BC25FD200F144BA /* DemoViewController.xib */; settings = {ASSET_TAGS = (); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		1C592D001BBE9E6D0081FA1C /* YoutubeParserBridge.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = YoutubeParserBridge.html; sourceTree = "<group>"; };
+		1C5A40241BC220B0006A80B1 /* DaiYoutubeParserDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DaiYoutubeParserDefine.h; sourceTree = "<group>"; };
+		1C5B13011BBE942F00D43036 /* DaiYoutubeParser.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DaiYoutubeParser.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1C5B13051BBE942F00D43036 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		1C5B13071BBE942F00D43036 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		1C5B13081BBE942F00D43036 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		1C5B13101BBE942F00D43036 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		1C5B13131BBE942F00D43036 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		1C5B13151BBE942F00D43036 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1C5B131C1BBE94D500D43036 /* DaiYoutubeParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DaiYoutubeParser.h; sourceTree = "<group>"; };
+		1C5B131D1BBE94D500D43036 /* DaiYoutubeParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DaiYoutubeParser.m; sourceTree = "<group>"; };
+		1C5B131F1BBE960700D43036 /* DaiYoutubeParserOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DaiYoutubeParserOperation.h; sourceTree = "<group>"; };
+		1C5B13201BBE960700D43036 /* DaiYoutubeParserOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DaiYoutubeParserOperation.m; sourceTree = "<group>"; };
+		1C5B13221BBE970200D43036 /* DaiYoutubeParserWebView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DaiYoutubeParserWebView.h; sourceTree = "<group>"; };
+		1C5B13231BBE970200D43036 /* DaiYoutubeParserWebView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DaiYoutubeParserWebView.m; sourceTree = "<group>"; };
+		1CB0D0741BC25FD200F144BA /* DemoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemoViewController.h; sourceTree = "<group>"; };
+		1CB0D0751BC25FD200F144BA /* DemoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DemoViewController.m; sourceTree = "<group>"; };
+		1CB0D0761BC25FD200F144BA /* DemoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DemoViewController.xib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1C5B12FE1BBE942F00D43036 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1C5B12F81BBE942F00D43036 = {
+			isa = PBXGroup;
+			children = (
+				1C5B13031BBE942F00D43036 /* DaiYoutubeParser */,
+				1C5B13021BBE942F00D43036 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		1C5B13021BBE942F00D43036 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1C5B13011BBE942F00D43036 /* DaiYoutubeParser.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		1C5B13031BBE942F00D43036 /* DaiYoutubeParser */ = {
+			isa = PBXGroup;
+			children = (
+				1C5B131B1BBE94AE00D43036 /* DaiYoutubeParser */,
+				1C5B13071BBE942F00D43036 /* AppDelegate.h */,
+				1C5B13081BBE942F00D43036 /* AppDelegate.m */,
+				1CB0D0741BC25FD200F144BA /* DemoViewController.h */,
+				1CB0D0751BC25FD200F144BA /* DemoViewController.m */,
+				1CB0D0761BC25FD200F144BA /* DemoViewController.xib */,
+				1C5B13101BBE942F00D43036 /* Assets.xcassets */,
+				1C5B13121BBE942F00D43036 /* LaunchScreen.storyboard */,
+				1C5B13151BBE942F00D43036 /* Info.plist */,
+				1C5B13041BBE942F00D43036 /* Supporting Files */,
+			);
+			path = DaiYoutubeParser;
+			sourceTree = "<group>";
+		};
+		1C5B13041BBE942F00D43036 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				1C5B13051BBE942F00D43036 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		1C5B131B1BBE94AE00D43036 /* DaiYoutubeParser */ = {
+			isa = PBXGroup;
+			children = (
+				1C592D001BBE9E6D0081FA1C /* YoutubeParserBridge.html */,
+				1C5A40241BC220B0006A80B1 /* DaiYoutubeParserDefine.h */,
+				1C5B131C1BBE94D500D43036 /* DaiYoutubeParser.h */,
+				1C5B131D1BBE94D500D43036 /* DaiYoutubeParser.m */,
+				1C5B131F1BBE960700D43036 /* DaiYoutubeParserOperation.h */,
+				1C5B13201BBE960700D43036 /* DaiYoutubeParserOperation.m */,
+				1C5B13221BBE970200D43036 /* DaiYoutubeParserWebView.h */,
+				1C5B13231BBE970200D43036 /* DaiYoutubeParserWebView.m */,
+			);
+			path = DaiYoutubeParser;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1C5B13001BBE942F00D43036 /* DaiYoutubeParser */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1C5B13181BBE942F00D43036 /* Build configuration list for PBXNativeTarget "DaiYoutubeParser" */;
+			buildPhases = (
+				1C5B12FD1BBE942F00D43036 /* Sources */,
+				1C5B12FE1BBE942F00D43036 /* Frameworks */,
+				1C5B12FF1BBE942F00D43036 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DaiYoutubeParser;
+			productName = DaiYoutubeParser;
+			productReference = 1C5B13011BBE942F00D43036 /* DaiYoutubeParser.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		1C5B12F91BBE942F00D43036 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0700;
+				ORGANIZATIONNAME = DaidoujiChen;
+				TargetAttributes = {
+					1C5B13001BBE942F00D43036 = {
+						CreatedOnToolsVersion = 7.0.1;
+					};
+				};
+			};
+			buildConfigurationList = 1C5B12FC1BBE942F00D43036 /* Build configuration list for PBXProject "DaiYoutubeParser" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 1C5B12F81BBE942F00D43036;
+			productRefGroup = 1C5B13021BBE942F00D43036 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1C5B13001BBE942F00D43036 /* DaiYoutubeParser */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1C5B12FF1BBE942F00D43036 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1C5B13141BBE942F00D43036 /* LaunchScreen.storyboard in Resources */,
+				1C592D011BBE9E6D0081FA1C /* YoutubeParserBridge.html in Resources */,
+				1C5B13111BBE942F00D43036 /* Assets.xcassets in Resources */,
+				1CB0D0781BC25FD200F144BA /* DemoViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1C5B12FD1BBE942F00D43036 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1C5B13241BBE970200D43036 /* DaiYoutubeParserWebView.m in Sources */,
+				1C5B13211BBE960700D43036 /* DaiYoutubeParserOperation.m in Sources */,
+				1C5B131E1BBE94D500D43036 /* DaiYoutubeParser.m in Sources */,
+				1CB0D0771BC25FD200F144BA /* DemoViewController.m in Sources */,
+				1C5B13091BBE942F00D43036 /* AppDelegate.m in Sources */,
+				1C5B13061BBE942F00D43036 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		1C5B13121BBE942F00D43036 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1C5B13131BBE942F00D43036 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		1C5B13161BBE942F00D43036 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		1C5B13171BBE942F00D43036 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		1C5B13191BBE942F00D43036 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = DaiYoutubeParser/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = tw.daidouji.DaiYoutubeParser;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		1C5B131A1BBE942F00D43036 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = DaiYoutubeParser/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = tw.daidouji.DaiYoutubeParser;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1C5B12FC1BBE942F00D43036 /* Build configuration list for PBXProject "DaiYoutubeParser" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1C5B13161BBE942F00D43036 /* Debug */,
+				1C5B13171BBE942F00D43036 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1C5B13181BBE942F00D43036 /* Build configuration list for PBXNativeTarget "DaiYoutubeParser" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1C5B13191BBE942F00D43036 /* Debug */,
+				1C5B131A1BBE942F00D43036 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 1C5B12F91BBE942F00D43036 /* Project object */;
+}
