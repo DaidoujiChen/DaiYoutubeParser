@@ -111,12 +111,25 @@
     superObject.receiver = self;
     superObject.super_class = class_isMetaClass(object_getClass(self)) ? object_getClass(self.superclass) : self.superclass;
     
+    // 解析類別
+    // - videoplayback?, 一般影片
+    // - .m3u8, 直播影片
+    BOOL isFoundTargetString = NO;
     NSString *urlString = [[NSString alloc] initWithFormat:@"%@", [(NSMutableURLRequest*)arg2 URL]];
     if ([urlString containsString:@"videoplayback?"]) {
+        isFoundTargetString = YES;
+    }
+    else if ([urlString containsString:@".m3u8"]) {
+        isFoundTargetString = YES;
+    }
+    
+    if (isFoundTargetString) {
         self.completion(DaiYoutubeParserStatusSuccess, urlString);
         return nil;
     }
-    return ((id(*)(id, SEL, id, id, id))objc_msgSendSuper)((__bridge id)(&superObject), _cmd, arg1, arg2, arg3);
+    else {
+        return ((id(*)(id, SEL, id, id, id))objc_msgSendSuper)((__bridge id)(&superObject), _cmd, arg1, arg2, arg3);
+    }
 }
 
 @end
