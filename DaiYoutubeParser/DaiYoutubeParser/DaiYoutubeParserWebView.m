@@ -128,7 +128,7 @@
         return nil;
     }
     else {
-        return ((id(*)(id, SEL, id, id, id))objc_msgSendSuper)((__bridge id)(&superObject), _cmd, arg1, arg2, arg3);
+        return ((id (*)(id, SEL, id, id, id))objc_msgSendSuper)((__bridge id)(&superObject), _cmd, arg1, arg2, arg3);
     }
 }
 
