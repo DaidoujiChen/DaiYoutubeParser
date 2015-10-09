@@ -31,8 +31,10 @@ It is very easy to use, there is a only method
 simple to use
 
 `````objc
-[DaiYoutubeParser parse:@"2cEi8IpUpBo" screenSize:CGSizeZero videoQuality:DaiYoutubeParserQualityHighres completion:^(DaiYoutubeParserStatus status, NSString *url) {
+[DaiYoutubeParser parse:@"2cEi8IpUpBo" screenSize:CGSizeZero videoQuality:DaiYoutubeParserQualityHighres completion:^(DaiYoutubeParserStatus status, NSString *url, NSString *videoTitle, NSNumber *videoDuration) {
 	if (status) {
+		NSLog(@"%@", videoTitle);
+		NSLog(@"%@", videoDuration);
 		NSLog(@"%@", url);
 	}
 	else {

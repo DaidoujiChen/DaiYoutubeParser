@@ -24,6 +24,6 @@ typedef enum {
     DaiYoutubeParserStatusSuccess
 } DaiYoutubeParserStatus;
 
-typedef void (^DaiYoutubeParserComplection)(DaiYoutubeParserStatus status, NSString *url);
+typedef void (^DaiYoutubeParserComplection)(DaiYoutubeParserStatus status, NSString *url, NSString *videoTitle, NSNumber *videoDuration);
 
 #endif
