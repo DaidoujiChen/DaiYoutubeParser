@@ -12,6 +12,8 @@
 
 @interface DemoViewController ()
 
+@property (weak, nonatomic) IBOutlet UITextField *titleTextField;
+@property (weak, nonatomic) IBOutlet UITextField *urlTextField;
 @property (weak, nonatomic) IBOutlet UITableView *videoListTableView;
 @property (weak, nonatomic) IBOutlet UIView *videoContainView;
 
@@ -38,9 +40,14 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     __weak DemoViewController *weakSelf = self;
-    [DaiYoutubeParser parse:self.dataSource[indexPath.row] screenSize:self.videoContainView.bounds.size videoQuality:DaiYoutubeParserQualityHighres completion:^(DaiYoutubeParserStatus status, NSString *url) {
+    [DaiYoutubeParser parse:self.dataSource[indexPath.row] screenSize:self.videoContainView.bounds.size videoQuality:DaiYoutubeParserQualityHighres completion:^(DaiYoutubeParserStatus status, NSString *url, NSString *videoTitle, NSNumber *videoDuration) {
         
         if (status) {
+            NSString *durationString = [NSString stringWithFormat:@"%02i:%02i", [videoDuration intValue]/60, [videoDuration intValue]%60];
+            NSString *title = [NSString stringWithFormat:@"(%@) %@", durationString, videoTitle];
+            weakSelf.titleTextField.text = title;
+            weakSelf.urlTextField.text = url;
+            
             if (weakSelf.avPlayerLayer) {
                 [weakSelf.avPlayerLayer.player pause];
                 [weakSelf.avPlayerLayer removeFromSuperlayer];
@@ -67,7 +74,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self.videoListTableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"UITableViewCell"];
-    self.dataSource = @[@"12345", @"2cEi8IpUpBo", @"P5KCCfURTCA", @"ADkvjHwGQDY", @"mIIb3Jf06AA", @"ViJ-geMKm0Q", @"W43FJw3yKGM", @"3iB8TCqagFQ"];
+    self.dataSource = @[@"6J1B1NMpX-E", @"12345", @"2cEi8IpUpBo", @"P5KCCfURTCA", @"ADkvjHwGQDY", @"mIIb3Jf06AA", @"ViJ-geMKm0Q", @"W43FJw3yKGM", @"3iB8TCqagFQ"];
 }
 
 @end

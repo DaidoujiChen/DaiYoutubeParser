@@ -58,8 +58,8 @@
     // webView 只可以在 main thread 上跑
     __weak DaiYoutubeParserOperation *weakSelf = self;
     dispatch_sync(dispatch_get_main_queue(), ^{
-        weakSelf.webView = [DaiYoutubeParserWebView createWebView:weakSelf.youtubeID screenSize:weakSelf.screenSize videoQuality:weakSelf.videoQuality completion: ^(DaiYoutubeParserStatus status, NSString *url) {
-            weakSelf.completion(status, url);
+        weakSelf.webView = [DaiYoutubeParserWebView createWebView:weakSelf.youtubeID screenSize:weakSelf.screenSize videoQuality:weakSelf.videoQuality completion:^(DaiYoutubeParserStatus status, NSString *url, NSString *videoTitle, NSNumber *videoDuration) {
+            weakSelf.completion(status, url, videoTitle, videoDuration);
             weakSelf.webView = nil;
             [weakSelf operationFinish];
         }];

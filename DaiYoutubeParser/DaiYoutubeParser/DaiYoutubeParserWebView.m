@@ -23,7 +23,7 @@
 + (void)webView:(DaiYoutubeParserWebView *)webView didFailLoadWithError:(NSError *)error {
     // 網路錯誤
     [webView terminalWebView];
-    webView.completion(DaiYoutubeParserStatusFail, nil);
+    webView.completion(DaiYoutubeParserStatusFail, nil, nil, nil);
 }
 
 #pragma mark - private class method
@@ -65,9 +65,9 @@
     
     // 設置回調
     __weak DaiYoutubeParserWebView *weakReturnWebView = returnWebView;
-    returnWebView.completion = ^(DaiYoutubeParserStatus status, NSString *url) {
+    returnWebView.completion = ^(DaiYoutubeParserStatus status, NSString *url, NSString *videoTitle, NSNumber *videoDuration) {
         [weakReturnWebView terminalWebView];
-        completion(status, url);
+        completion(status, url, videoTitle, videoDuration);
     };
     
     // 開始讀取, 並且設置 timer 觀測是不是有 error 發生
@@ -77,6 +77,17 @@
 }
 
 #pragma mark - private instance method
+
+- (NSString *)getVideoTitle {
+    NSString *videoTitle = [self stringByEvaluatingJavaScriptFromString:@"getVideoTitle()"];
+    return videoTitle;
+}
+
+- (NSNumber *)getDuration {
+    NSUInteger unsignedIntegerValue = [[self stringByEvaluatingJavaScriptFromString:@"getDuration()"] integerValue];
+    NSNumber *duration = (unsignedIntegerValue == NSNotFound)? nil:@(unsignedIntegerValue);
+    return duration;
+}
 
 - (void)terminalWebView {
     [self stopLoading];
@@ -102,7 +113,7 @@
     NSString *errorString = [self stringByEvaluatingJavaScriptFromString:@"error();"];
     if (errorString.integerValue > 0) {
         [self terminalWebView];
-        self.completion(DaiYoutubeParserStatusFail, nil);
+        self.completion(DaiYoutubeParserStatusFail, nil, nil, nil);
     }
 }
 
@@ -124,7 +135,9 @@
     }
     
     if (isFoundTargetString) {
-        self.completion(DaiYoutubeParserStatusSuccess, urlString);
+        NSString *videoTitle = [self getVideoTitle];
+        NSNumber *duration = [self getDuration];
+        self.completion(DaiYoutubeParserStatusSuccess, urlString, videoTitle, duration);
         return nil;
     }
     else {
