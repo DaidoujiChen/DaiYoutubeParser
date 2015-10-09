@@ -126,7 +126,7 @@
     // - videoplayback?, 一般影片
     // - .m3u8, 直播影片
     BOOL isFoundTargetString = NO;
-    NSString *urlString = [[NSString alloc] initWithFormat:@"%@", [(NSMutableURLRequest*)arg2 URL]];
+    NSString *urlString = [[NSString alloc] initWithFormat:@"%@", [(NSMutableURLRequest *)arg2 URL]];
     if ([urlString containsString:@"videoplayback?"]) {
         isFoundTargetString = YES;
     }
