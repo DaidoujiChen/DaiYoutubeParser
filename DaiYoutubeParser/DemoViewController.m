@@ -43,7 +43,7 @@
     [DaiYoutubeParser parse:self.dataSource[indexPath.row] screenSize:self.videoContainView.bounds.size videoQuality:DaiYoutubeParserQualityHighres completion:^(DaiYoutubeParserStatus status, NSString *url, NSString *videoTitle, NSNumber *videoDuration) {
         
         if (status) {
-            NSString *durationString = [NSString stringWithFormat:@"%02i:%02i", [videoDuration intValue]/60, [videoDuration intValue]%60];
+            NSString *durationString = [NSString stringWithFormat:@"%02i:%02i", videoDuration.integerValue / 60, videoDuration.integerValue % 60];
             NSString *title = [NSString stringWithFormat:@"(%@) %@", durationString, videoTitle];
             weakSelf.titleTextField.text = title;
             weakSelf.urlTextField.text = url;
