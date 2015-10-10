@@ -10,6 +10,8 @@
 #import <AVFoundation/AVFoundation.h>
 #import "DaiYoutubeParser.h"
 
+#define enableThumbnails YES
+
 @interface DemoViewController ()
 
 @property (weak, nonatomic) IBOutlet UITextField *titleTextField;
@@ -32,9 +34,85 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"UITableViewCell" forIndexPath:indexPath];
-    cell.textLabel.text = self.dataSource[indexPath.row];
+
+    if (enableThumbnails) {
+
+        __weak DemoViewController *weakSelf = self;
+
+        NSUInteger rowIndex = (NSUInteger) indexPath.row;
+
+        [ DaiYoutubeParser parse:self.dataSource[rowIndex]
+                      screenSize:self.videoContainView.bounds.size
+                    videoQuality:DaiYoutubeParserQualityHighres
+                      completion:^(DaiYoutubeParserStatus status,
+                                   NSString *url,
+                                   NSString *videoTitle,
+                                   NSNumber *videoDuration) {
+
+                          if (status) {
+
+                              if (weakSelf.avPlayerLayer) {
+
+                                  [ weakSelf.avPlayerLayer.player pause ];
+                                  [ weakSelf.avPlayerLayer removeFromSuperlayer ];
+
+                              }
+
+                              cell.imageView.image = [ self videoThumbNail:url ];
+
+                          } else {
+
+                              cell.textLabel.text = self.dataSource[rowIndex];
+                              cell.imageView.image = nil;
+
+                          }
+
+                      } ];
+
+
+    } else {
+
+        cell.textLabel.text = self.dataSource[indexPath.row];
+
+    }
     return cell;
 }
+
+- (UIImage *)videoThumbNail:(NSString *)url {
+
+    AVAsset *asset = [ AVAsset assetWithURL:[ NSURL URLWithString:url ] ];
+    AVAssetImageGenerator *imageGenerator = [ [ AVAssetImageGenerator alloc ] initWithAsset:asset ];
+    CMTime time = CMTimeMake(5,
+                             1);// 5/1=5 seconds
+    CGImageRef imageRef = [ imageGenerator copyCGImageAtTime:time
+                                                  actualTime:NULL
+                                                       error:NULL ];
+
+    CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
+    CGFloat cellWidth = self.videoListTableView.frame.size.width;
+    int cellHeight = 50;
+    CGContextRef bitmap = CGBitmapContextCreate(NULL,
+                                                (size_t) cellWidth,
+                                                (size_t) cellHeight,
+                                                8,
+                                                (size_t) (4 * cellWidth),
+                                                colorSpace,
+                                                (CGBitmapInfo) kCGImageAlphaPremultipliedFirst);
+    CGContextDrawImage(bitmap,
+                       CGRectMake(0,
+                                  0,
+                                  cellWidth,
+                                  cellHeight),
+                       imageRef);
+    CGImageRef ref = CGBitmapContextCreateImage(bitmap);
+    UIImage *result = [ UIImage imageWithCGImage:ref ];
+
+    CGContextRelease(bitmap);
+    CGImageRelease(ref);
+
+    return result;
+}
+
 
 #pragma mark - UITableViewDelegate
 
